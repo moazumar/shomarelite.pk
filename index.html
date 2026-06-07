@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShoMar Elite Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ================================================
+     NAVBAR
+================================================ -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <div class="nav-top">
+        <div class="nav-topline">
+          <div class="nav-topline-content">
+            <span>APKA APNA SHOMAR ELITE STORE</span>
+            <span>APKA APNA SHOMAR ELITE STORE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-row">
+        <ul class="nav-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button id="cart-btn" title="Open Cart" onclick="toggleCart()">
+            <i class="fas fa-shopping-bag"></i>
+            <span id="cart-count">0</span>
+          </button>
+          <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <ul class="mobile-nav" id="mobile-nav">
+      <li><a href="#hero"    onclick="closeMobileNav()">Home</a></li>
+      <li><a href="#shop"    onclick="closeMobileNav()">Shop</a></li>
+      <li><a href="#contact" onclick="closeMobileNav()">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================================================
+     HERO
+================================================ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="container" style="width:100%">
+    <div class="hero-content">
+      <div class="hero-logo-wrap">
+        <img src="assets/Screenshot%202026-06-07%20115857.png" alt="ShoMar Elite" class="hero-logo" />
+      </div>
+      <div class="hero-actions">
+        <a href="#shop" class="hero-link">Shop Now</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-hint-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- Announcement bar -->
+<div class="announce-bar">
+  ✦ Free shipping on orders above PKR 5,000 &nbsp;|&nbsp; Nationwide delivery in 3–5 days &nbsp;|&nbsp; Authentic products guaranteed ✦
+</div>
+
+<!-- ================================================
+     SHOP / PRODUCTS
+================================================ -->
+<section id="shop">
+  <div class="container">
+    <div class="shop-header fade-in">
+      <div>
+        <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;"><span class="gold-line"></span>Our Products</p>
+        <h2 class="section-title">Elite <span class="gold">Collection</span></h2>
+      </div>
+      <div class="search-wrap">
+        <input type="text" id="search-input" placeholder="Search products…" oninput="filterProducts()"/>
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="filter-row fade-in">
+      <button class="filter-btn active" onclick="setCategory('all',this)">All Products</button>
+      <button class="filter-btn" onclick="setCategory('bags',this)">Bags</button>
+      <button class="filter-btn" onclick="setCategory('accessories',this)">Accessories</button>
+      <button class="filter-btn" onclick="setCategory('wallets',this)">Wallets</button>
+      <button class="filter-btn" onclick="setCategory('travel',this)">Travel</button>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid" id="product-grid">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     WISHLIST
+================================================ -->
+<section id="wishlist-section">
+  <div class="container">
+    <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;"><span class="gold-line"></span>Saved Items</p>
+    <h2 class="section-title">My <span class="gold">Wishlist</span></h2>
+    <div id="wishlist-grid"></div>
+  </div>
+</section>
+
+<!-- ================================================
+     CONTACT
+================================================ -->
+<section id="contact">
+  <div class="container">
+    <div class="fade-in">
+      <p style="font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;"><span class="gold-line"></span>Get in Touch</p>
+      <h2 class="section-title">Contact <span class="gold">Us</span></h2>
+    </div>
+    <div class="contact-grid">
+      <!-- Info -->
+      <div class="fade-in">
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <div class="contact-detail-label">Address</div>
+            <div class="contact-detail-val">LahorePakistan</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <div class="contact-detail-label">WhatsApp</div>
+            <div class="contact-detail-val">+92 3299902054</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="contact-detail-label">Email</div>
+            <div class="contact-detail-val"><a href="mailto:shomarelite@gmail.com">shomarelite@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <div class="contact-detail-label">Business Hours</div>
+            <div class="contact-detail-val">Mon–Sat, 10am – 8pm PKT</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="fade-in">
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="c-name" placeholder="Your name"/>
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" id="c-email" placeholder="Your email"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" id="c-subject" placeholder="How can we help?"/>
+          </div>
+          <div class="form-group">
+            <label>Message *</label>
+            <textarea id="c-message" placeholder="Tell us more…"></textarea>
+          </div>
+          <div class="form-msg" id="contact-msg"></div>
+          <button class="btn btn-gold" onclick="submitContact()">Send Message &nbsp;<i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     FOOTER
+================================================ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <img src="assets/Screenshot%202026-06-07%20115857.png" alt="ShoMar Elite" class="site-logo"/>
+          <div class="footer-logo-text">ShoMar<span class="gold">Elite</span></div>
+        </div>
+        <p>Unique products. Elite style. Curated for those who demand the very best from life and their accessories.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn" title="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="https://wa.me/923299902054" class="social-btn" title="WhatsApp" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#shop">Bags & Carriers</a></li>
+          <li><a href="#shop">Accessories</a></li>
+          <li><a href="#shop">Wallets</a></li>
+          <li><a href="#shop">Travel Gear</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#contact">Help Center</a></li>
+          <li><a href="#contact">Order Tracking</a></li>
+          <li><a href="#contact">Returns Policy</a></li>
+          <li><a href="#newsletter">Newsletter</a></li>
+          <li><a href="admin.html">Admin Panel</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 ShoMar Elite. All rights reserved.</span>
+      <span style="color:var(--gold);">Unique Products. Elite Style.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================================================
+     CART SIDEBAR
+================================================ -->
+<div id="cart-overlay" onclick="toggleCart()"></div>
+<aside id="cart-sidebar">
+  <div class="cart-header">
+    <h3>Your <span class="gold">Cart</span></h3>
+    <button class="cart-close" onclick="toggleCart()"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span class="cart-subtotal-label">Total</span>
+      <span class="cart-subtotal-val" id="cart-total">PKR 0</span>
+    </div>
+    <p class="cart-note">Delivery charges calculated at checkout.</p>
+    <button class="checkout-btn" onclick="checkout()">Proceed to Checkout <i class="fas fa-arrow-right" style="margin-left:8px;"></i></button>
+  </div>
+</aside>
+
+<!-- WhatsApp Float -->
+<a id="whatsapp-float" href="https://wa.me/923299902054" target="_blank" rel="noopener noreferrer" title="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Toast Notification -->
+<div id="toast"></div>
+
+
+<!-- ================================================
+     JAVASCRIPT
+================================================ -->
+<script src="script.js"></script>
+
+</body>
+</html>
