@@ -14,7 +14,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 2,
     name: "Elite Messenger Bag",
-    img: "",
+    img: "assets/images.jfif",
     price: 6800,
     origPrice: 8000,
     category: "bags",
@@ -25,7 +25,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 3,
     name: "Premium Arm Sleeves",
-    img: "",
+    img: "assets/images-1.jfif",
     price: 1200,
     origPrice: 1500,
     category: "accessories",
@@ -36,7 +36,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 4,
     name: "Tactical Wallet",
-    img: "",
+    img: "assets/images-2.jfif",
     price: 1800,
     origPrice: 2200,
     category: "wallets",
@@ -47,7 +47,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 5,
     name: "Travel Organizer",
-    img: "",
+    img: "assets/images-3.jfif",
     price: 2200,
     origPrice: 2600,
     category: "travel",
@@ -58,7 +58,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 6,
     name: "Leather Card Sleeve",
-    img: "",
+    img: "assets/images-4.jfif",
     price: 950,
     origPrice: 1200,
     category: "wallets",
@@ -69,7 +69,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 7,
     name: "Sport Duffel Bag",
-    img: "",
+    img: "assets/images-5.jfif",
     price: 5500,
     origPrice: 6500,
     category: "bags",
