@@ -61,7 +61,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 6,
     name: "Sport Duffle Bag",
-    img: "assets/images-5.jfif",
+    img: "assets/images-4.jfif",
     price: 5550,
     origPrice: 8000,
     category: "bags",
