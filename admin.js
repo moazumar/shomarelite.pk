@@ -3,7 +3,7 @@ const DEFAULT_PRODUCTS = [
   {
     id: 1,
     name: "Urban Messenger Bag",
-    img: "",
+    img: "assets/bag-messanger.png",
     price: 4500,
     origPrice: 7000,
     category: "bags",
